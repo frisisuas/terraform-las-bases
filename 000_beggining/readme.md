@@ -23,7 +23,7 @@
 4. Cerramos el terminal y lanzamos otra terminal de Powershell y ejecutamos: az version
 ![az_version_executed.png](images/az_version_executed.png)
 5. Ya podemos loguearnos en nuestra cuenta de de Azure con: 
-	1. `az login`
+	`az login`
 	 
 > En caso de tener varias suscripciones:
 
