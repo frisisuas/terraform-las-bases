@@ -1,40 +1,50 @@
-# Creating content...
+# Primeros pasos con Terraform (Windows)
+
+## Instalación de Terraform en Windows.
+
+1. Descargar Terraform de la página web del desarrollador: [Terraform](https://www.terraform.io/downloads "Terraform") 
+2. Una vez descargado Terraform, copiamos el archivo terraform.exe a una carpeta específica para los ejecutables. Por ejemplo:
+![terraform_on_binaries_folder](images/terraform_on_binaries_folder.png)
+
+3. Añadimos la carpeta a las variables de entorno de Windows:
+![environment_add_binaries_folder.png](images/environment_add_binaries_folder.png)
+
+4. Abrimos la terminal de powershell y ejecutamos: terraform -v
+
+![prompt_terraform_installed](images/prompt_terraform_installed.png)
 
 
-## Welcome to GitHub Pages
+## Descargar AzureCLI en en Windows.
 
-You can use the [editor on GitHub](https://github.com/frisisuas/terraform-las-bases/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. Accedemos al sitio web de descarga de [Azure cli](https://docs.microsoft.com/es-es/cli/azure/install-azure-cli "AZURE CLI").
+2. Descargamos la versión del paquete correspondiente a nuestro OS, en nuestro caso, Windows: [https://aka.ms/installazurecliwindows](https://aka.ms/installazurecliwindows "https://aka.ms/installazurecliwindows")
+3. Ejecutamos el instalador de Azure CLI y realizamos la instalación.
+4. Cerramos el terminal y lanzamos otra terminal de Powershell y ejecutamos: az version
+![az_version_executed.png](images/az_version_executed.png)
+5. Ya podemos loguearnos en nuestra cuenta de de Azure con: 
+    `az login`
+	 
+6. En caso de tener varias suscripciones: `az account set --subscription "Nombre de la suscripción"`
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+## Crear una carpeta para nuestro código y utilizar el IDE que más os guste:
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+Creamos una carpeta en otra unidad de nuestro sistema u otro lugar.
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
+Hay diferentes IDE para empezar a desplegar con Terraform. Entre los que suelo utilizar yo, son:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/frisisuas/terraform-las-bases/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- [Visual Studio Code](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64 "Visual Studio Code")
+- [Intellij IDEA Community Edition](https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC "Intellij IDEA Community Edition")
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Ya estamos listos para empezar a trabajar con Terraform.
+
+
+----------
