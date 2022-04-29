@@ -3,7 +3,7 @@ data "terraform_remote_state" "networking" {
   config = {
     resource_group_name  = "aztfstate"
     storage_account_name = "tfstatee793h"
-    container_name       = "tfstate"
+    container_name       = "REPLACE"
     key                  = "networking.tfstate"
   }
 }
