@@ -2,4 +2,5 @@
 .idea/*
 .gitignore
 *.lock.hcl
+.dccache
 
