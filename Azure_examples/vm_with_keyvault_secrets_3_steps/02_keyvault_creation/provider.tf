@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "XXXXXXXXXXXXX"	//Replace it
-    storage_account_name = "XXXXXXXXXXXXX"      //Replace it
+    resource_group_name  = "XXXXXXXXXXXXX" //Replace it
+    storage_account_name = "XXXXXXXXXXXXX" //Replace it
     container_name       = "tfstate"
     key                  = "DEV/terraform.tfstate"
   }
@@ -21,5 +21,3 @@ provider "azurerm" {
   }
   subscription_id = var.subscription_id
 }
-
-

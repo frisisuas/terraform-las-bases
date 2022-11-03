@@ -2,19 +2,19 @@
 ## Application - Variables ##
 #############################
 
-# app name 
+# app name
 variable "app_name" {
   type        = string
   description = "This variable defines the application name used to build resources"
 }
 
-# company name 
+# company name
 variable "company" {
   type        = string
   description = "This variable defines the company name used to build resources"
 }
 
-# company prefix 
+# company prefix
 variable "prefix" {
   type        = string
   description = "This variable defines the company name prefix used to build resources"

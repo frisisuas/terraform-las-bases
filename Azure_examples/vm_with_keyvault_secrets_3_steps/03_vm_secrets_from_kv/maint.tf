@@ -146,6 +146,3 @@ resource "azurerm_windows_virtual_machine" "vm" {
   }
   tags = var.default_tags
 }
-
-
-

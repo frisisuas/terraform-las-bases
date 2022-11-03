@@ -19,4 +19,3 @@ resource "azurerm_key_vault_secret" "vpn-root-certificate" {
     environment = var.environment
   }
 }
-

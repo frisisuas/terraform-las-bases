@@ -2,7 +2,7 @@
 
 Que vamos a desplegar en este ejercicio.
 
-## En el ejercicio 1. ## 
+## En el ejercicio 1. ##
 Vamos a desplegar un RG con un storage account y un contenedor de blobs para almacenar el tfstate.
 
 ![Creación de un backend para el tfstate del despliegue.](./images/creation_backend.png)
@@ -16,4 +16,3 @@ Desplegaremos un keyvault dentro de un RG con 2 secretos.
 Desplegaremos una máquina virtual cogiendo los secretos del keyvault. Con ello, conseguiremos que nuestro despliegue contenga claves o texto sensible a posibles filtraciones involuntarias.
 
 ![Despliegue de una VM con los secretos desde el KV.](./images/vm_deploy_with_screts_from_kv.png)
-

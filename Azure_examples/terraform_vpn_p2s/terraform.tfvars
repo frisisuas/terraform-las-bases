@@ -15,4 +15,3 @@ region      = "weu"
 ###########
 vnet-cidr           = "10.10.0.0/16"
 gateway-subnet-cidr = "10.10.0.0/27"
-
