@@ -1,0 +1,68 @@
+# Table of Contents
+
+1. [Usage](#usage)
+2. [Requirements](#requirements)
+3. [Providers](#Providers)
+4. [Inputs](#inputs)
+5. [Outputs](#outputs)
+
+## Usage
+
+*various commands
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | 3.29.1 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.29.1 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_key_vault.keyvault](https://registry.terraform.io/providers/hashicorp/azurerm/3.29.1/docs/resources/key_vault) | resource |
+| [azurerm_key_vault_secret.vpn-root-certificate](https://registry.terraform.io/providers/hashicorp/azurerm/3.29.1/docs/resources/key_vault_secret) | resource |
+| [azurerm_public_ip.kopi-gateway-ip](https://registry.terraform.io/providers/hashicorp/azurerm/3.29.1/docs/resources/public_ip) | resource |
+| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/3.29.1/docs/resources/resource_group) | resource |
+| [azurerm_subnet.gateway-subnet](https://registry.terraform.io/providers/hashicorp/azurerm/3.29.1/docs/resources/subnet) | resource |
+| [azurerm_virtual_network.vnet](https://registry.terraform.io/providers/hashicorp/azurerm/3.29.1/docs/resources/virtual_network) | resource |
+| [azurerm_virtual_network_gateway.kopi-vpn-gateway](https://registry.terraform.io/providers/hashicorp/azurerm/3.29.1/docs/resources/virtual_network_gateway) | resource |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.29.1/docs/data-sources/client_config) | data source |
+| [azurerm_key_vault_secret.vpn-root-certificate](https://registry.terraform.io/providers/hashicorp/azurerm/3.29.1/docs/data-sources/key_vault_secret) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_app_name"></a> [app\_name](#input\_app\_name) | This variable defines the application name used to build resources | `string` | n/a | yes |
+| <a name="input_company"></a> [company](#input\_company) | This variable defines the company name used to build resources | `string` | n/a | yes |
+| <a name="input_environment"></a> [environment](#input\_environment) | This variable defines the environment to be built | `string` | n/a | yes |
+| <a name="input_gateway-subnet-cidr"></a> [gateway-subnet-cidr](#input\_gateway-subnet-cidr) | The CIDR for the Gateway subnet | `string` | n/a | yes |
+| <a name="input_kv-certificate-permissions-full"></a> [kv-certificate-permissions-full](#input\_kv-certificate-permissions-full) | List of full certificate permissions, must be one or more from the following: backup, create, delete, deleteissuers, get, getissuers, import, list, listissuers, managecontacts, manageissuers, purge, recover, restore, setissuers and update | `list(string)` | <pre>[<br>  "Create",<br>  "Delete",<br>  "DeleteIssuers",<br>  "Get",<br>  "GetIssuers",<br>  "Import",<br>  "List",<br>  "ListIssuers",<br>  "ManageContacts",<br>  "ManageIssuers",<br>  "Purge",<br>  "Recover",<br>  "SetIssuers",<br>  "Update",<br>  "Backup",<br>  "Restore"<br>]</pre> | no |
+| <a name="input_kv-enabled-for-deployment"></a> [kv-enabled-for-deployment](#input\_kv-enabled-for-deployment) | Allow Azure Virtual Machines to retrieve certificates stored as secrets from the Azure Key Vault | `string` | `"true"` | no |
+| <a name="input_kv-enabled-for-disk-encryption"></a> [kv-enabled-for-disk-encryption](#input\_kv-enabled-for-disk-encryption) | Allow Azure Disk Encryption to retrieve secrets from the Azure Key Vault and unwrap keys | `string` | `"true"` | no |
+| <a name="input_kv-enabled-for-template-deployment"></a> [kv-enabled-for-template-deployment](#input\_kv-enabled-for-template-deployment) | Allow Azure Resource Manager to retrieve secrets from the Azure Key Vault | `string` | `"true"` | no |
+| <a name="input_kv-key-permissions-full"></a> [kv-key-permissions-full](#input\_kv-key-permissions-full) | List of full key permissions, must be one or more from the following: backup, create, decrypt, delete, encrypt, get, import, list, purge, recover, restore, sign, unwrapKey, update, verify and wrapKey. | `list(string)` | <pre>[<br>  "Backup",<br>  "Create",<br>  "Decrypt",<br>  "Delete",<br>  "Encrypt",<br>  "Get",<br>  "Import",<br>  "List",<br>  "Purge",<br>  "Recover",<br>  "Restore",<br>  "Sign",<br>  "UnwrapKey",<br>  "Update",<br>  "Verify",<br>  "WrapKey"<br>]</pre> | no |
+| <a name="input_kv-secret-permissions-full"></a> [kv-secret-permissions-full](#input\_kv-secret-permissions-full) | List of full secret permissions, must be one or more from the following: backup, delete, get, list, purge, recover, restore and set | `list(string)` | <pre>[<br>  "Backup",<br>  "Delete",<br>  "Get",<br>  "List",<br>  "Purge",<br>  "Recover",<br>  "Restore",<br>  "Set"<br>]</pre> | no |
+| <a name="input_kv-sku-name"></a> [kv-sku-name](#input\_kv-sku-name) | Select Standard or Premium SKU | `string` | `"standard"` | no |
+| <a name="input_kv-storage-permissions-full"></a> [kv-storage-permissions-full](#input\_kv-storage-permissions-full) | List of full storage permissions, must be one or more from the following: backup, delete, deletesas, get, getsas, list, listsas, purge, recover, regeneratekey, restore, set, setsas and update | `list(string)` | <pre>[<br>  "Backup",<br>  "Delete",<br>  "DeleteSAS",<br>  "Get",<br>  "GetSAS",<br>  "List",<br>  "ListSAS",<br>  "Purge",<br>  "Recover",<br>  "RegenerateKey",<br>  "Restore",<br>  "Set",<br>  "SetSAS",<br>  "Update"<br>]</pre> | no |
+| <a name="input_location"></a> [location](#input\_location) | Azure region where the resource group will be created | `string` | `"westeurope"` | no |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | This variable defines the company name prefix used to build resources | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | Azure region code where the resource group will be created | `string` | `"weu"` | no |
+| <a name="input_vnet-cidr"></a> [vnet-cidr](#input\_vnet-cidr) | The CIDR of the VNET | `string` | n/a | yes |
+
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
