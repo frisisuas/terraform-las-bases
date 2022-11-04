@@ -3,3 +3,6 @@
 .gitignore
 *.lock.hcl
 .dccache
+Azure_examples/terraform_vpn_p2s/.terraform
+Azure_examples/terraform_vpn_p2s/.terraform.lock.hcl
+Azure_examples/terraform_vpn_p2s/.terraform/*

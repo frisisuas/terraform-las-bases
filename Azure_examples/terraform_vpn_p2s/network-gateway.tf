@@ -14,7 +14,7 @@ data "azurerm_key_vault_secret" "vpn-root-certificate" {
 }
 
 # Create a Public IP for the Gateway
-resource "azurerm_public_ip" "kopi-gateway-ip" {
+resource "azurerm_public_ip" "gateway-ip" {
   name                = "${var.region}-${var.environment}-${var.app_name}-gw-ip"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
@@ -22,7 +22,7 @@ resource "azurerm_public_ip" "kopi-gateway-ip" {
 }
 
 # Create VPN Gateway
-resource "azurerm_virtual_network_gateway" "kopi-vpn-gateway" {
+resource "azurerm_virtual_network_gateway" "vpn-gateway" {
   name                = "${var.region}-${var.environment}-${var.app_name}-gw"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
@@ -36,7 +36,7 @@ resource "azurerm_virtual_network_gateway" "kopi-vpn-gateway" {
 
   ip_configuration {
     name                          = "${var.region}-${var.environment}-${var.app_name}-vnet"
-    public_ip_address_id          = azurerm_public_ip.kopi-gateway-ip.id
+    public_ip_address_id          = azurerm_public_ip.gateway-ip.id
     private_ip_address_allocation = "Dynamic"
     subnet_id                     = azurerm_subnet.gateway-subnet.id
   }

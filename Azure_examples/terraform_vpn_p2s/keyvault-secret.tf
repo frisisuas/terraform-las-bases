@@ -4,7 +4,7 @@
 
 # Variable for Certificate Name
 locals {
-  certificate-name = "KopiCloud-RootCert.crt"
+  certificate-name = "devops-RootCert.crt"
 }
 
 # Create a Secret for the VPN Root certificate

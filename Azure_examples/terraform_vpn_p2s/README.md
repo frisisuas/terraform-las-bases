@@ -6,6 +6,12 @@
 4. [Inputs](#inputs)
 5. [Outputs](#outputs)
 
+---
+
+Based from: [guillermo-musumeci](https://github.com/guillermo-musumeci/azure-terraform-point-to-site-vpn-gateway) 
+
+---
+
 ## Usage
 
 1. First, execute the powershell script.
